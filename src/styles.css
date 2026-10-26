@@ -1,0 +1,97 @@
+@import '@fontsource-variable/playfair-display';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/outfit';
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand palette */
+  --pink: #d81b50;
+  --pink-deep: #b0123f;
+  --pink-light: #f48fb1;
+  --pink-soft: #fde7ee;
+  --cocoa: #3a1f1d;
+  --cocoa-soft: #6b5a58;
+
+  /* shadcn tokens */
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: var(--cocoa);
+  --card: #ffffff;
+  --card-foreground: var(--cocoa);
+  --popover: #ffffff;
+  --popover-foreground: var(--cocoa);
+  --primary: var(--pink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--pink-soft);
+  --secondary-foreground: var(--pink-deep);
+  --muted: #f7f5f5;
+  --muted-foreground: var(--cocoa-soft);
+  --accent: var(--pink-soft);
+  --accent-foreground: var(--cocoa);
+  --destructive: #dc2626;
+  --border: #ece8e8;
+  --input: #ece8e8;
+  --ring: var(--pink-light);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-logo: 'Outfit Variable', 'Manrope Variable', sans-serif;
+  --font-display: 'Playfair Display Variable', Georgia, serif;
+  --font-editorial: 'Playfair Display Variable', Georgia, serif;
+
+  /* Brand colours → bg-pink, text-cocoa, etc. */
+  --color-pink: var(--pink);
+  --color-pink-deep: var(--pink-deep);
+  --color-pink-light: var(--pink-light);
+  --color-pink-soft: var(--pink-soft);
+  --color-cocoa: var(--cocoa);
+  --color-cocoa-soft: var(--cocoa-soft);
+
+  /* shadcn colours */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-base leading-relaxed antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
